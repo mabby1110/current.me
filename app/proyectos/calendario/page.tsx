@@ -18,8 +18,9 @@ export default function VistaCalendario() {
                                 <>
                                     {
                                         week.map((day)=>(
+                                            //[ 'Sun', '31', 'Dec', '2023', '06:00:00', 'GMT' ]
                                             <>
-                                                <div className={Style.dayCell}>{day}</div>
+                                                <div className={Style.dayCell}>{day[1]}</div>
                                             </>
                                         ))
                                     }

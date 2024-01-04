@@ -10,10 +10,10 @@ export default function getMonthData() {
     const monthData = new Array(5).fill([]).map(()=>{
         return new Array(7).fill([]).map(()=>{
             currentDay++
-            return dayjs(new Date(year, month, currentDay)).toISOString()
+            return dayjs(new Date(year, month, currentDay)).toString().split(/[\s,]+/)
         })
     })
     console.log(year)
-    console.log(monthData[0][0])
+    console.log(monthData[0][0][0])
     return monthData
 }
