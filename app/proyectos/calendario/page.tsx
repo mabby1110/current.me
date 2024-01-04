@@ -1,18 +1,30 @@
 "use client"
-import getMonth from "@/app/proyectos/calendario/util"
+import getMonthData from "./getMonthData"
 
 export default function VistaCalendario() {
-    const monthMatrix = getMonth()
+    const monthData = getMonthData()
 
     return (
         <div>
             <h1>calendario :)</h1>
             <>
+                <p>sidebar</p>
                 <div>
                     <h1>calendar header</h1>
                     <div>
-                        <p>sidebar</p>
-                        
+                        {
+                            monthData.map((week)=>(
+                                <>
+                                    {
+                                        week.map((day)=>(
+                                            <>
+                                                <div>{day}</div>
+                                            </>
+                                        ))
+                                    }
+                                </>
+                            ))
+                        }
                     </div>
                 </div>
             </>
