@@ -5,7 +5,7 @@ export default function VProyectos() {
         <div>
             <h1>Mis proyectos</h1>
             <div>
-                <Link href='/proyectos/calendario'>lista proyectos</Link>
+                <Link href='/proyectos/calendario'>calendario</Link>
                 <div>meta</div>
                 <div>preview</div>
             </div>

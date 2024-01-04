@@ -1,5 +1,6 @@
 "use client"
 import getMonthData from "./getMonthData"
+import Style from './calendario.module.css'
 
 export default function VistaCalendario() {
     const monthData = getMonthData()
@@ -11,14 +12,14 @@ export default function VistaCalendario() {
                 <p>sidebar</p>
                 <div>
                     <h1>calendar header</h1>
-                    <div>
+                    <div className={Style.monthGrid}>
                         {
                             monthData.map((week)=>(
                                 <>
                                     {
                                         week.map((day)=>(
                                             <>
-                                                <div>{day}</div>
+                                                <div className={Style.dayCell}>{day}</div>
                                             </>
                                         ))
                                     }
