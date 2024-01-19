@@ -2,12 +2,11 @@ import { useEffect, useState } from 'react'
 import * as THREE from 'three'
 
 export default function HomeScene() {
-  const [renderer, setRenderer] = useState(null)
-  const [mainCamera, setMainCamera] = useState(null)
-  const [scene, setScene] = useState(null)
+  const [renderer, setRenderer] = useState(false)
+  const [mainCamera, setMainCamera] = useState(false)
+  const [scene, setScene] = useState(false)
 
   useEffect(() => {
-    // if (typeof window !== 'undefined') {
       const width = window.innerWidth
       const height = window.innerHeight
 
@@ -35,28 +34,7 @@ export default function HomeScene() {
       setScene(scene)
 
       renderer.render(scene, mainCamera)
-    // }
   }, [])
-
-  useEffect(() => {
-    if (renderer && mainCamera) {
-      const handleResize = () => {
-        const width = window.innerWidth
-        const height = window.innerHeight
-        renderer.setSize(width, height)
-        renderer.render(scene, mainCamera)
-      }
-
-      window.addEventListener('resize', handleResize)
-
-      // Set initial size
-      handleResize()
-
-      return () => {
-        window.removeEventListener('resize', handleResize)
-      }
-    }
-  }, [renderer, mainCamera])
 
   return (
     <canvas id="app"></canvas>
