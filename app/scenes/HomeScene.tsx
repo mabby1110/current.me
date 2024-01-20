@@ -1,3 +1,4 @@
+"use client"
 import { useEffect, useState } from 'react'
 import * as THREE from 'three'
 
@@ -7,6 +8,7 @@ export default function HomeScene() {
   const [scene, setScene] = useState(false)
 
   useEffect(() => {
+    // if (typeof window !== 'undefined') {
       const width = window.innerWidth
       const height = window.innerHeight
 
@@ -26,15 +28,33 @@ export default function HomeScene() {
       light.position.set(0, 6, 2)
       scene.add(light)
 
-      const orbitControl = new THREE.CameraHelper(mainCamera)
-      scene.add(orbitControl)
-
       setRenderer(renderer)
       setMainCamera(mainCamera)
       setScene(scene)
 
       renderer.render(scene, mainCamera)
+    // }
   }, [])
+
+  useEffect(() => {
+    if (renderer && mainCamera) {
+      const handleResize = () => {
+        const width = window.innerWidth
+        const height = window.innerHeight
+        renderer.setSize(width, height)
+        renderer.render(scene, mainCamera)
+      }
+      
+      window.addEventListener('resize', handleResize)
+      
+      // Set initial size
+      handleResize()
+ 
+      return () => {
+        window.removeEventListener('resize', handleResize)
+      }
+    }
+  }, [renderer, mainCamera])
 
   return (
     <canvas id="app"></canvas>

@@ -10,7 +10,6 @@ export default function Home() {
             </h1>
 
             <div>cargar modelo</div>
-            <HomeScene/>
         </>
     )
 }

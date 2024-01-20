@@ -1,6 +1,7 @@
 import Link from "next/link"
 import "./styles/global.css"
 import Image from "next/image"
+import HomeScene from "./scenes/HomeScene"
 
 export const metadata = {
   title: 'Next.js',
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <HomeScene/>
         <main>
           <nav>
             <Link href='/'>

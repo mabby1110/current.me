@@ -1,0 +1,32 @@
+.mainContent {
+    padding-top: 20px;
+
+    overflow-x: hidden;
+
+    width: 100%;
+    height: 92vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 6fr 4fr 6fr;
+    grid-auto-rows: 100px;
+}
+
+.secHero {
+    grid-area: 1 / 1 / 2 / 4;
+    height: 500px;
+}
+
+.contenidoCarrito {
+    position: sticky;
+    top: 0;
+}
+
+.contenidoSpot{
+    position: sticky;
+    top: 0;
+    display: none;
+}
+.producto {
+    width: 100px;
+    height: 100px;
+}
