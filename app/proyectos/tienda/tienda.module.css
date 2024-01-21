@@ -1,32 +1,60 @@
 .mainContent {
-    padding-top: 20px;
-
-    overflow-x: hidden;
-
     width: 100%;
     height: 92vh;
     display: grid;
     grid-template-rows: 1fr 1fr;
-    grid-template-columns: 6fr 4fr 6fr;
     grid-auto-rows: 100px;
+    gap: 10px;
 }
 
 .secHero {
-    grid-area: 1 / 1 / 2 / 4;
-    height: 500px;
+    background-color: blueviolet;
+    height: 400px;
+}
+
+.secTienda {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.secPromo {
+    flex-grow: 2;
+}
+
+.contenidoPromo {
+    background-color: blueviolet;
+    position: sticky;
+    top: 10vh;
+}
+
+.secCarrito {
+    flex-grow: 2;
 }
 
 .contenidoCarrito {
+    background-color: blueviolet;
     position: sticky;
-    top: 0;
+    top: 10vh;
 }
 
-.contenidoSpot{
-    position: sticky;
-    top: 0;
-    display: none;
+.secCatalogo {
+    flex-grow: 3;
+    height: fit-content;
 }
-.producto {
-    width: 100px;
-    height: 100px;
+
+@media only screen and (max-width: 1096px){
+    .secPromo {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .secPromo {
+        display: none;
+    }
+
+    .secCarrito {
+        display: none;
+    }
 }

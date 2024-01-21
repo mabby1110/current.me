@@ -55,8 +55,11 @@
 
   nav {
     height: 8vh;
+    width: 100%;
     display: flex;
     align-items: center;
+    position: sticky;
+    top: 0
   }
 
   nav a {
@@ -67,4 +70,5 @@
 
   nav img {
     border-radius: 50%;
+    height: auto;
   }
